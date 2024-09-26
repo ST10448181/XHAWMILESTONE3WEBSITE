@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lifeskills</title>
+</head>
+<style>
+    .button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #4d7554;
+      border: none;
+      color: #000000;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+    
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .button:hover span {
+      padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    </style>
+<body>
+    <body bgcolor= "80db5a">
+        <body text="black">
+           <strong>Life Skills</strong> 
+            Fees: R1500
+            Purpose: To provide skills to navigate basic life necessities
+            Content:
+            <ul>
+                <li>Opening a bank account</li>
+                <li>Basic labour law (know your rights)</li>
+                <li>Basic reading and writing literacy </li>
+                <li>Basic numeric literacy</li>
+            </ul>
+            
+            <button class="button"><a href="sixmonths.html"><span>Back</span></a></button>
+            <button class="button"><a href="calc.html"><span>Calculation</span></a></button>
+</body>
+</html>

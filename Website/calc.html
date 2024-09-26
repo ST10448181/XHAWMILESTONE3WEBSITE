@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calculateFees() {
+        let total = 0;
+        // Select all checked checkboxes
+        let courses = document.querySelectorAll('input[name="courses"]:checked');
+        
+        // Loop through each selected checkbox and add its value to the total
+        courses.forEach(function(course) {
+            total += parseInt(course.value);
+        });
+
+        // Display the total amount in the "total-fees" paragraph
+        document.getElementById("total-fees").innerText = "Total: R" + total;
+    }
+</script>
+<body><link rel="stylesheet" href="styles.css">
+    <body text="black">
+    
+      
+    <header>
+    <ul>
+    <div class="navig">
+        <li><a href="home.html">Home Page</a></li>
+    <li><a href= "AboutUs.html"> About Us</a></li>
+    <li><a href= "ContactUs.html"> Contact Us</a></li>       
+    <li><a href= "sixweeks.html"> Six weeks</a></li>
+    <li><a href= "sixmonths.html">Six months</a></li>
+    
+      </ul> 
+   </div>
+    </header>
+    
+  <body bgcolor= "80db5a">
+        <body text="black">
+    <form id="fee-calculator">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <fieldset>
+            <legend>Select Courses</legend>
+            <input type="checkbox" id="first-aid" name="courses" value="1500">
+            <label for="first-aid">First Aid (R1500)</label><br>
+            <input type="checkbox" id="sewing" name="courses" value="1500">
+            <label for="sewing">Sewing (R1500)</label><br>
+            <input type="checkbox" id="landscaping" name="courses" value="1500">
+            <label for="landscaping">Landscaping (R1500)</label><br>
+            <input type="checkbox" id="life-skills" name="courses" value="1500">
+            <label for="life-skills">Life Skills (R1500)</label><br>
+            <input type="checkbox" id="child-minding" name="courses" value="750">
+            <label for="child-minding">Child Minding (R750)</label><br>
+            <input type="checkbox" id="cooking" name="courses" value="750">
+            <label for="cooking">Cooking (R750)</label><br>
+            <input type="checkbox" id="garden-maintenance" name="courses" value="750">
+            <label for="garden-maintenance">Garden Maintenance (R750)</label>
+        </fieldset>
+        <button type="button" onclick="calculateFees()">Calculate</button>
+        <p id="total-fees">Total: R0</p>
+    </form>
+
+
+<form id="fee-calculator">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Empowering the Nation</p>
+    </footer>
+   
+
+    
+        
+    <script>
+        function calculateFees() {
+            // Get all selected courses
+            let courses = document.querySelectorAll('input[name="courses"]:checked');
+            
+            // Calculate the total cost before discount
+            let total = 0;
+            courses.forEach(course => {
+                total += parseFloat(course.value);
+            });
+
+            // Apply discount based on the number of selected courses
+            let discount = 0;
+            let courseCount = courses.length;
+            if (courseCount == 2) {
+                discount = 0.05; // 5% discount for two courses
+            } else if (courseCount == 3) {
+                discount = 0.10; // 10% discount for three courses
+            } else if (courseCount > 3) {
+                discount = 0.15; // 15% discount for more than three courses
+            }
+
+            // Calculate the final amount after discount
+            let finalAmount = total - (total * discount);
+
+            // Display the total fee
+            document.getElementById('total-fees').innerHTML = `Total: R${finalAmount.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
